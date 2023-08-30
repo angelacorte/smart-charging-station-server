@@ -14,7 +14,7 @@ exports.signup = function(req, res) {
             email: req.body.email
         }]
     }).then(async u => {
-        if(u.email !== undefined){
+        if(u !== null){
             res.send({status: 409, description: "email or email already in use"})
         }else{
             let user = new User(await setUserFields(req.body, false))
