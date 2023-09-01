@@ -13,7 +13,7 @@ let UserSchema = new Schema({
     email: {type: String, required: true},
     password: {type: String, required: true},
     token : {type: String},
-    chargingStations: [{type: String}],
+    chargingStations: [{type: Number}],
 });
 
 UserSchema.pre("save", function(next) {
